@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package helloworld;
 
-option go_package="github.com/eargollo/proto-hello";
+option go_package="github.com/eargollo/proto-hello/gen/proto;helloworld";
 
 // The greeting service definition
 service Greeter {
