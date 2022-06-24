@@ -6,6 +6,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 
 	helloworldpb "github.com/eargollo/proto-hello/gen/proto/helloworld"
 )
@@ -33,6 +34,7 @@ func main() {
 	s := grpc.NewServer()
 	// Attach the Greeter service to the server
 	helloworldpb.RegisterGreeterServer(s, &server{})
+	reflection.Register(s)
 	// Serve gRPC Server
 	log.Println("Serving gRPC on 0.0.0.0:8080")
 	log.Fatal(s.Serve(lis))
