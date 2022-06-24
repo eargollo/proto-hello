@@ -1,2 +1,4 @@
 version: v1
 name: buf.build/eargollo/proto-hello
+deps:
+  - buf.build/googleapis/googleapis
