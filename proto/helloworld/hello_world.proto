@@ -4,20 +4,20 @@ package helloworld;
 
 option go_package="github.com/eargollo/proto-hello/gen/proto;helloworld";
 
-import "google/api/annotations.proto";
+import "proto/google/api/annotations.proto";
 
 // The greeting service definition
 service Greeter {
   // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {
+  rpc PostHello (HelloRequest) returns (HelloReply) {
     option (google.api.http) = {
-      post: "/v1/example/echo"
+      post: "/v1/example/hello"
       body: "*"
     };
   }
   rpc GetHello (GetHelloRequest) returns (GetHelloReply) {
     option (google.api.http) = {
-      get: "/v1/example/echo/{name}"
+      get: "/v1/example/hello/{name}"
     };
   }
 }

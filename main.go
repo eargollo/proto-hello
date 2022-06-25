@@ -22,12 +22,12 @@ func NewServer() *server {
 	return &server{}
 }
 
-func (s *server) SayHello(ctx context.Context, in *helloworldpb.HelloRequest) (*helloworldpb.HelloReply, error) {
+func (s *server) PostHello(ctx context.Context, in *helloworldpb.HelloRequest) (*helloworldpb.HelloReply, error) {
 	return &helloworldpb.HelloReply{Message: in.Name + " world"}, nil
 }
 
 func (s *server) GetHello(ctx context.Context, in *helloworldpb.GetHelloRequest) (*helloworldpb.GetHelloReply, error) {
-	return &helloworldpb.GetHelloReply{Message: in.Name + " farofinha com fafinha"}, nil
+	return &helloworldpb.GetHelloReply{Message: in.Name + " world (GET)"}, nil
 }
 
 func main() {
